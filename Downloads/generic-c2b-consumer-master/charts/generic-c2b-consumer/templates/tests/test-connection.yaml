@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "generic-c2b-consumer.fullname" . }}-test-connection"
+  labels:
+    {{- include "generic-c2b-consumer.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "generic-c2b-consumer.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

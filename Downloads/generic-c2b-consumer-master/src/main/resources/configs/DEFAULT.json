@@ -1,0 +1,5 @@
+{
+   "username":"mvend_merchant_api_user",
+   "password":"Mvend@12",
+   "cpgURL": "http://ca1-h5.staging.cellulant.africa:9020/payments/public/postPayment"
+}
